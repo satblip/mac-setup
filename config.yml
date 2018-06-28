@@ -1,0 +1,159 @@
+---
+downloads: ~/.ansible-downloads/
+
+config_from_git:
+  - { repo: git@github.com:satblip/SublimeText3_Settings.git,
+      destination: ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User }
+  - { repo: git@github.com:satblip/fisherman_config.git,
+      destination: ~/.config/fish }
+  - { repo: git@github.com:satblip/iterm_config.git,
+      destination: ~/Github/iterm_config }
+  - { repo: git@github.com:satblip/karabiner-elements-config.git,
+      destination: ~/.config/karabiner }
+
+homebrew_installed_packages:
+  - ansible
+  - fish
+  - mas
+  - npm
+  - openssl
+  - python
+  - python3
+  - redis
+  - siege
+  - sqlite
+  - wget
+  - zookeeper
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - 1password
+  - adobe-creative-cloud
+  - alfred
+  - android-file-transfer
+  - android-studio
+  - arduino
+  - busycal
+  - colorsnapper
+  - cyberduck
+  - datagrip
+  - docker
+  - dropbox
+  - eagle
+  - etcher
+  - evernote
+  - filezilla
+  - firefox
+  - flycut
+  - gitify
+  - google-chrome
+  - grandperspective
+  - iterm2
+  - karabiner-elements
+  - licecap
+  - microsoft-office
+  - obs
+  - onyx
+  - paw
+  - postico
+  - setapp
+  - skype
+  - slack
+  - sourcetree
+  - spotify
+  - sublime-text
+  - tinymediamanager
+  - virtualbox
+  - viscosity
+  - visual-studio-code
+  - vlc
+  - wireshark
+
+mas_installed_apps:
+  - { id: 425264550, name: "Airmail 3 (3.5.4)" }
+  - { id: 937984704, name: "Amphetamine (3.0.2)" }
+  - { id: 470158793, name: "Keka (1.0.14)" }
+  - { id: 409183694, name: "Keynote (7.3.1)" }
+  - { id: 623413384, name: "LAN Scan (1.11)" }
+  - { id: 550128418, name: "Media-Info (1.2)" }
+  - { id: 497799835, name: "Xcode (9.4)" }
+
+# osx_script: "~/.osx --no-restart"
+
+gem_packages: []
+
+npm_packages:
+  - name: awsmobile-cli
+    state: present
+    version: "^1.1"
+  - name: create-react-native-app
+    state: present
+    version: "^1.0"
+  - name: csslint
+    state: present
+    version: "^1.0"
+  - name: elasticdump
+    state: present
+    version: "^3.3"
+  - name: electron-builder
+    state: present
+    version: "^19.55"
+  - name: eslint
+    state: present
+    version: "^4.11"
+  - name: lumber-cli
+    state: present
+    version: "^1.7"
+  - name: ngrok
+    state: present
+    version: "^2.2"
+  - name: react-native-cli
+    state: present
+    version: "^2.0"
+  - name: semistandard
+    state: present
+    version: "^12.0"
+
+pip_packages:
+  - name: esptool
+    state: present
+    version: "2.1"
+  - name: flake8
+    state: present
+    version: "3.3"
+  - name: Jinja2
+    state: present
+    version: "2.9"
+
+vscode_packages:
+  - DavidAnson.vscode-markdownlint
+  - PeterJausovec.vscode-docker
+  - Shan.code-settings-sync
+  - Tyriar.sort-lines
+  - christian-kohler.path-intellisense
+  - dracula-theme.theme-dracula
+  - esbenp.prettier-vscode
+  - flet.vscode-semistandard
+  - formulahendry.code-runner
+  - haaaad.ansible
+  - mohsen1.prettify-json
+  - mongoose-os.mongoose-os-ide
+  - ms-python.python
+  - ms-vscode.cpptools
+  - ms-vscode.sublime-keybindings
+  - msjsdiag.debugger-for-chrome
+  - platformio.platformio-ide
+  - ryu1kn.partial-diff
+  - shyykoserhiy.vscode-spotify
+  - sozercan.slack
+  - spywhere.guides
+  - teabyii.ayu
+  - webfreak.debug
+  - wholroyd.jinja
+  - wmaurer.change-case
+
+post_provision_tasks: []

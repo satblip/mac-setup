@@ -1,0 +1,7 @@
+---
+- name: Ensure configuration repos are cloned locally.
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.destination }}"
+  become: no
+  with_items: "{{ config_from_git }}"
