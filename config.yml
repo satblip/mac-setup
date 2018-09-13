@@ -13,6 +13,7 @@ config_from_git:
 
 homebrew_installed_packages:
   - ansible
+  - avrdude
   - fish
   - mas
   - npm
@@ -20,9 +21,12 @@ homebrew_installed_packages:
   - python
   - python3
   - redis
+  - shellcheck
   - siege
   - sqlite
+  - shellcheck
   - wget
+  - wine
   - zookeeper
 
 homebrew_taps:
@@ -38,9 +42,12 @@ homebrew_cask_apps:
   - android-studio
   - arduino
   - busycal
+  - calibre
+  - coolterm
   - colorsnapper
   - cyberduck
   - datagrip
+  - debookee
   - docker
   - dropbox
   - eagle
@@ -48,23 +55,30 @@ homebrew_cask_apps:
   - evernote
   - filezilla
   - firefox
+  - flux
   - flycut
   - gitify
   - google-chrome
   - grandperspective
   - iterm2
   - karabiner-elements
+  - kicad
   - licecap
   - microsoft-office
+  - mqttfx
   - obs
   - onyx
   - paw
   - postico
+  - scratch
+  - sequel-pro
   - setapp
+  - sketchup
   - skype
   - slack
   - sourcetree
   - spotify
+  - steam
   - sublime-text
   - tinymediamanager
   - virtualbox
@@ -78,8 +92,8 @@ mas_installed_apps:
   - { id: 937984704, name: "Amphetamine (3.0.2)" }
   - { id: 470158793, name: "Keka (1.0.14)" }
   - { id: 409183694, name: "Keynote (7.3.1)" }
-  - { id: 623413384, name: "LAN Scan (1.11)" }
   - { id: 550128418, name: "Media-Info (1.2)" }
+  - { id: 402398561, name: "MindNode Pro (1.11.5)" }
   - { id: 497799835, name: "Xcode (9.4)" }
 
 # osx_script: "~/.osx --no-restart"
@@ -117,6 +131,9 @@ npm_packages:
   - name: semistandard
     state: present
     version: "^12.0"
+  - name: serverless
+    state: present
+    version: "^1.29"
 
 pip_packages:
   - name: esptool

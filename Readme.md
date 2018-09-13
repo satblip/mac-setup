@@ -22,8 +22,10 @@ pip list
 Antidote 9
 Canon Utilities
 Belgium eId viewer
+Autodesk Fusion
 Logic analyser software
 Niko Home control
+Redis desktop manager
 Prusa apps
 Qelectrotech
 
