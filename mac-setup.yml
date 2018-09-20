@@ -23,10 +23,13 @@
     - include_tasks: tasks/extra-packages.yml
 
     - include_tasks: tasks/install-fisherman.yml
+      tags: ['fisherman']
 
     - include_tasks: tasks/install-hack-font.yml
+      tags: ['hack_font']
 
     - include_tasks: tasks/configuration.yml
+      tags: ['configuration']
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"

@@ -2,17 +2,16 @@
 downloads: ~/.ansible-downloads/
 
 config_from_git:
-  - { repo: git@github.com:satblip/SublimeText3_Settings.git,
-      destination: ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User }
-  - { repo: git@github.com:satblip/fisherman_config.git,
-      destination: ~/.config/fish }
-  - { repo: git@github.com:satblip/iterm_config.git,
-      destination: ~/Github/iterm_config }
-  - { repo: git@github.com:satblip/karabiner-elements-config.git,
-      destination: ~/.config/karabiner }
+  - { repo: "git@github.com:satblip/SublimeText3_Settings.git",
+      destination: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User" }
+  - { repo: "git@github.com:satblip/fisherman_config.git",
+      destination: "~/.config/fish" }
+  - { repo: "git@github.com:satblip/iterm_config.git",
+      destination: "~/Github/iterm_config" }
+  - { repo: "git@github.com:satblip/karabiner-elements-config.git",
+      destination: "~/.config/karabiner" }
 
 homebrew_installed_packages:
-  - ansible
   - avrdude
   - fish
   - mas
@@ -41,7 +40,6 @@ homebrew_cask_apps:
   - android-file-transfer
   - android-studio
   - arduino
-  - busycal
   - calibre
   - coolterm
   - colorsnapper
@@ -77,11 +75,11 @@ homebrew_cask_apps:
   - skype
   - slack
   - sourcetree
+  - spectacle
   - spotify
   - steam
   - sublime-text
   - tinymediamanager
-  - virtualbox
   - viscosity
   - visual-studio-code
   - vlc
