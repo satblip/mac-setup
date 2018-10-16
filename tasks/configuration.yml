@@ -1,13 +1,8 @@
 ---
-- name: Remove Fish config file
-  file:
-    state: absent
-    path: "~/.config/fish"
-  tags: ['configuration']
 - name: Ensure configuration repos are cloned locally.
   git:
-    repo: "{{ item.repo }}"
-    dest: "{{ item.destination }}"
+    repo: '{{ item.repo }}'
+    dest: '{{ item.destination }}'
   become: no
-  with_items: "{{ config_from_git }}"
+  with_items: '{{ config_from_git }}'
   tags: ['configuration']

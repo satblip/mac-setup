@@ -1,9 +1,12 @@
 # Requirements
 
+- disable system integrity protection `csrutil disable` (in recovery mode)
 - HomeBrew
 - Git setup and credentials
 - Ansible setup
-- `ansible-galaxy install -r requirements.yml -p ./roles`
+- `ansible-galaxy install elliotweiser.osx-command-line-tools -p ./roles`
+- `ansible-galaxy collection install geerlingguy.mac -p ./collections`
+- enable system integrity protection `csrutil enable` (in recovery mode)
 
 # Run
 
@@ -21,23 +24,18 @@ pip list
 
 # Not installed with the script
 
-- Antidote 9
-- Canon Utilities
+- Antidote
 - Belgium eId viewer
-- Autodesk Fusion
-- Logic analyser software
 - Niko Home control
-- Redis desktop manager
-- Prusa apps
 - Qelectrotech
+- filezilla
+- Setup Setapp apps
+- Autodesk Fusion 360
+- Autodesk Eagle
 
 # TODO:
 
-- Config karabiner-elements
+- config git
+- config zsh
 - config visual-studio-code
-- Favoris Datagrip
 - Favoris Filezilla
-- Favoris Postico
-- Setup Setapp apps
-- Automates OS config
-
