@@ -13,6 +13,7 @@ ansible-playbook mac-setup.yml --ask-become-pass
 # Update the list
 
 ```bash
+brew list
 npm list -g --depth=0
 pip list
 ```
