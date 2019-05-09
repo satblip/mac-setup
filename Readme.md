@@ -21,22 +21,22 @@ pip list
 
 # Not installed with the script
 
-Antidote 9
-Canon Utilities
-Belgium eId viewer
-Autodesk Fusion
-Logic analyser software
-Niko Home control
-Redis desktop manager
-Prusa apps
-Qelectrotech
+- Antidote 9
+- Canon Utilities
+- Belgium eId viewer
+- Autodesk Fusion
+- Logic analyser software
+- Niko Home control
+- Redis desktop manager
+- Prusa apps
+- Qelectrotech
 
 # TODO:
 
-Config karabiner-elements
-config visual-studio-code
-Favoris Datagrip
-Favoris Filezilla
-Favoris Postico
-Setup Setapp apps
+- Config karabiner-elements
+- config visual-studio-code
+- Favoris Datagrip
+- Favoris Filezilla
+- Favoris Postico
+- Setup Setapp apps
 
