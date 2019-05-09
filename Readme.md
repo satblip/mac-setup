@@ -39,4 +39,5 @@ pip list
 - Favoris Filezilla
 - Favoris Postico
 - Setup Setapp apps
+- Automates OS config
 
