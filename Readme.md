@@ -1,5 +1,6 @@
 # Requirements
 
+- HomeBrew
 - Git setup and credentials
 - Ansible setup
 - `ansible-galaxy install -r requirements.yml -p ./roles`
