@@ -36,7 +36,7 @@ molecule==2.15.0
 monotonic==1.5
 more-itertools==4.2.0
 packaging==17.1
-paramiko==2.4.1
+paramiko==2.10.1
 pathspec==0.5.6
 pbr==3.0.1
 pexpect==4.2.1
