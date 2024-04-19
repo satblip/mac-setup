@@ -2,31 +2,31 @@
 downloads: ~/.ansible-downloads/
 
 config_from_git:
-  - { repo: "git@github.com:satblip/SublimeText3_Settings.git",
-      destination: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User" }
-  - { repo: "git@github.com:satblip/fisherman_config.git",
-      destination: "~/.config/fish" }
-  - { repo: "git@github.com:satblip/iterm_config.git",
-      destination: "~/Github/iterm_config" }
-  - { repo: "git@github.com:satblip/karabiner-elements-config.git",
-      destination: "~/.config/karabiner" }
+  - {
+      repo: 'git@github.com:satblip/karabiner-elements-config.git',
+      destination: '~/.config/karabiner',
+    }
 
 homebrew_installed_packages:
-  - avrdude
-  - fish
+  - gh
+  - iperf
   - mas
+  - node
+  - nmap
   - npm
   - openssl
   - python
   - python3
   - redis
+  - telnet
   - shellcheck
   - siege
   - sqlite
-  - shellcheck
+  - tldr
   - wget
-  - wine
   - zookeeper
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
 homebrew_taps:
   - homebrew/core
@@ -34,142 +34,117 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - 1password
   - adobe-creative-cloud
-  - alfred
-  - android-file-transfer
-  - android-studio
-  - arduino
-  - calibre
-  - coolterm
+  - affinity-designer
+  - another-redis-desktop-manager
+  - audio-hijack
+  - autodesk-fusion
+  - bruno
+  - chirp
+  - cockatrice
   - colorsnapper
-  - cyberduck
-  - datagrip
+  - coolterm
   - debookee
-  - docker
+  - discord
+  - drawio
   - dropbox
   - eagle
   - etcher
-  - evernote
-  - filezilla
+  - farrago
   - firefox
-  - flux
-  - flycut
-  - gitify
+  - firefox-developer-edition
   - google-chrome
+  - gpg-suite
   - grandperspective
+  - imageoptim
   - iterm2
   - karabiner-elements
-  - kicad
+  - keka
   - licecap
   - microsoft-office
   - mqttfx
+  - ngrok
+  - notion
+  - notion-calendar
   - obs
   - onyx
-  - paw
+  - opera
+  - orbstack
+  - pocket-casts
+  - postbox
   - postico
   - postman
-  - scratch
-  - sequel-pro
+  - prusaslicer
+  - qflipper
+  - raycast
+  - rectangle
+  - saleae-logic
   - setapp
-  - sketchup
-  - skype
+  - signal
   - slack
+  - sourcetree
   - sourcetree
   - spectacle
   - spotify
   - steam
   - sublime-text
+  - surfshark
   - tinymediamanager
+  - via
   - viscosity
   - visual-studio-code
   - vlc
   - wireshark
+  - zoom
 
 mas_installed_apps:
-  - { id: 425264550, name: "Airmail 3 (3.5.4)" }
-  - { id: 937984704, name: "Amphetamine (3.0.2)" }
-  - { id: 470158793, name: "Keka (1.0.14)" }
-  - { id: 409183694, name: "Keynote (7.3.1)" }
-  - { id: 550128418, name: "Media-Info (1.2)" }
-  - { id: 402398561, name: "MindNode Pro (1.11.5)" }
-  - { id: 497799835, name: "Xcode (9.4)" }
+  - { id: 1352778147, name: 'Bitwarden (2024.2.0)' }
+  - { id: 1500180529, name: 'UPS Power Monitor (1.5.9)' }
+  - { id: 497799835, name: 'Xcode (15.3)' }
+  - { id: 669289700, name: 'Sweet Home 3D (7.3.1)' }
+  - { id: 937984704, name: 'Amphetamine (5.3.2)' }
+  - { id: 1088670425, name: 'Cuprum (3.1.9)' }
 
 # osx_script: "~/.osx --no-restart"
 
 gem_packages: []
 
 npm_packages:
-  - name: awsmobile-cli
-    state: present
-    version: "^1.1"
-  - name: create-react-native-app
-    state: present
-    version: "^1.0"
-  - name: csslint
-    state: present
-    version: "^1.0"
-  - name: elasticdump
-    state: present
-    version: "^3.3"
-  - name: electron-builder
-    state: present
-    version: "^19.55"
   - name: eslint
     state: present
-    version: "^4.11"
-  - name: lumber-cli
-    state: present
-    version: "^1.7"
-  - name: ngrok
-    state: present
-    version: "^2.2"
-  - name: react-native-cli
-    state: present
-    version: "^2.0"
   - name: semistandard
     state: present
-    version: "^12.0"
-  - name: serverless
+  - name: snazzy
     state: present
-    version: "^1.29"
+  - name: nyc
+    state: present
+  - name: eslint-plugin-standard
+    state: present
 
 pip_packages:
-  - name: esptool
+  - name: platformio
     state: present
-    version: "2.1"
-  - name: flake8
-    state: present
-    version: "3.3"
-  - name: Jinja2
-    state: present
-    version: "2.9"
 
 vscode_packages:
-  - DavidAnson.vscode-markdownlint
-  - PeterJausovec.vscode-docker
-  - Shan.code-settings-sync
-  - Tyriar.sort-lines
-  - christian-kohler.path-intellisense
-  - dracula-theme.theme-dracula
-  - esbenp.prettier-vscode
-  - flet.vscode-semistandard
-  - formulahendry.code-runner
-  - haaaad.ansible
-  - mohsen1.prettify-json
-  - mongoose-os.mongoose-os-ide
-  - ms-python.python
-  - ms-vscode.cpptools
-  - ms-vscode.sublime-keybindings
-  - msjsdiag.debugger-for-chrome
-  - platformio.platformio-ide
-  - ryu1kn.partial-diff
-  - shyykoserhiy.vscode-spotify
-  - sozercan.slack
+  - artdiniz.quitcontrol-vscode
+  - bmarkovic.haproxy
   - spywhere.guides
-  - teabyii.ayu
-  - webfreak.debug
   - wholroyd.jinja
   - wmaurer.change-case
+  - donjayamanne.githistory
+  - druideinformatique.antidote
+  - gruntfuggly.todo-tree
+  - lokalise.i18n-ally
+  - tyriar.sort-lines
+  - christian-kohler.npm-intellisense
+  - christian-kohler.path-intellisense
+  - bruno-api-client.bruno
+  - dbaeumer.vscode-eslint
+  - platformio.platformio-ide
+  - digitalbrainstem.javascript-ejs-support
+  - ryanluker.vscode-coverage-gutters
+  - github.copilot-chat
+  - github.copilot
+  - davidanson.vscode-markdownlint
 
 post_provision_tasks: []

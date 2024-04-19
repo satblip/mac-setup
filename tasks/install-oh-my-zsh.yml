@@ -1,0 +1,19 @@
+---
+- name: Setup oh-my-zsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  tags: ['oh-my-zsh']
+  ignore_errors: yes
+
+- name: Set zsh as default shell
+  shell: chsh -s /bin/zsh
+  tags: ['oh-my-zsh']
+  become: true
+
+- name: add zsh plugins to zshrc if not already there
+  blockinfile:
+    path: ~/.zshrc
+    block: |
+      source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+      source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  tags: ['oh-my-zsh']
+  ignore_errors: yes

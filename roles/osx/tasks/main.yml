@@ -1,0 +1,21 @@
+- name: Be sure that desktop folder exists
+  file:
+    path: '~/Desktop/tmp'
+    state: directory
+  become: true
+
+- name: Add OSX specific tweaks
+  template:
+    src: osx_tweaks.sh.j2
+    dest: '~/Desktop/tmp/osx_tweaks.sh'
+  become: true
+
+- name: Make OSX specific tweaks executable
+  file:
+    path: '~/Desktop/tmp/osx_tweaks.sh'
+    mode: '0755'
+  become: true
+
+- name: Run OSX specific tweaks
+  command: '~/Desktop/tmp/osx_tweaks.sh'
+  become: true

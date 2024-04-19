@@ -1,1 +1,3 @@
 vars/apple-credentials.yml
+roles/*
+!roles/osx
