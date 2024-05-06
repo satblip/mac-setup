@@ -104,6 +104,7 @@ mas_installed_apps:
   - { id: 669289700, name: 'Sweet Home 3D (7.3.1)' }
   - { id: 937984704, name: 'Amphetamine (5.3.2)' }
   - { id: 1088670425, name: 'Cuprum (3.1.9)' }
+  - { id: 442160987, name: 'Flycut (1.9.6)' }
 
 # osx_script: "~/.osx --no-restart"
 
