@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew list:*)",
+      "Bash(brew search:*)",
+      "Bash(brew info:*)",
+      "Bash(mas list:*)",
+      "Bash(sort -t' ' -k2)",
+      "Bash(/usr/local/bin/mas list:*)",
+      "Bash(xargs -I{} mdls -name kMDItemAppStoreHasReceipt -name kMDItemCFBundleIdentifier -name kMDItemDisplayName {})",
+      "Bash(mas search:*)",
+      "Bash(npm list:*)",
+      "Bash(pip3 list:*)",
+      "Bash(pip list:*)",
+      "Bash(/dev/null which:*)",
+      "Bash(~/.platformio/penv/bin/pip list:*)",
+      "Bash(code --list-extensions)",
+      "Bash(find /Users/satblip/GITHUB/PERSO/mac-setup -type f -not -path */.git/*)"
+    ]
+  }
+}

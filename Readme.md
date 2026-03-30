@@ -1,25 +1,25 @@
 # Requirements
 
-- disable system integrity protection `csrutil disable` (in recovery mode)
 - HomeBrew
 - Git setup and credentials
 - Ansible setup
-- `ansible-galaxy install elliotweiser.osx-command-line-tools -p ./roles`
-- `ansible-galaxy collection install geerlingguy.mac -p ./collections`
-- enable system integrity protection `csrutil enable` (in recovery mode)
+
+# Install dependencies
+
+```bash
+make install
+```
 
 # Run
 
 ```bash
-ansible-playbook mac-setup.yml --ask-become-pass
+make run
 ```
 
 # Update the list
 
 ```bash
-brew list
-npm list -g --depth=0
-pip list
+make update
 ```
 
 # Not installed with the script
@@ -28,12 +28,11 @@ pip list
 - Belgium eId viewer
 - Niko Home control
 - Qelectrotech
-- filezilla
+- FileZilla Pro (no cask available for the Pro version)
 - Setup Setapp apps
 - Autodesk Fusion 360
-- Autodesk Eagle
 
-# TODO:
+# Still to be configured
 
 - config git
 - config zsh

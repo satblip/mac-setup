@@ -1,6 +1,9 @@
 ---
 downloads: ~/.ansible-downloads/
 
+hack_font_version: "3.003"
+computer_name: "SatAirUFO"
+
 config_from_git:
   - {
       repo: 'git@github.com:satblip/karabiner-elements-config.git',
@@ -30,10 +33,7 @@ homebrew_installed_packages:
   - zsh-autosuggestions
   - zsh-syntax-highlighting
 
-homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
-  - homebrew/cask-versions
+homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:

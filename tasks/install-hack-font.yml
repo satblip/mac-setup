@@ -6,7 +6,7 @@
   tags: ['hack_font']
 - name: Unarchive hack font and put in right folder.
   unarchive:
-    src: https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
+    src: "https://github.com/source-foundry/Hack/releases/download/v{{ hack_font_version }}/Hack-v{{ hack_font_version }}-ttf.zip"
     dest: ~/Library/Fonts/hack
     remote_src: yes
   tags: ['hack_font']

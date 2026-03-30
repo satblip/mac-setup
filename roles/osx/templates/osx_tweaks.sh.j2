@@ -15,10 +15,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Settings → Sharing)
-sudo scutil --set ComputerName "SatAirUFO"
-sudo scutil --set HostName "SatAirUFO"
-sudo scutil --set LocalHostName "SatAirUFO"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "SatAirUFO"
+sudo scutil --set ComputerName "{{ computer_name }}"
+sudo scutil --set HostName "{{ computer_name }}"
+sudo scutil --set LocalHostName "{{ computer_name }}"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "{{ computer_name }}"
 
 # Disable the startup sound
 # (SystemAudioVolume is ignored on Apple Silicon — use StartupMute instead)
@@ -145,10 +145,19 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to Dropbox if available, otherwise fall back to Desktop
-if [ -d "${HOME}/Dropbox" ]; then
-  mkdir -p "${HOME}/Dropbox/Screenshots"
-  defaults write com.apple.screencapture location -string "${HOME}/Dropbox/Screenshots"
-  echo "Dropbox found — screenshots will be saved to ~/Dropbox/Screenshots"
+# Dropbox can be at ~/Dropbox (legacy) or ~/Library/CloudStorage/Dropbox (macOS Ventura+)
+if [ -d "${HOME}/Library/CloudStorage/Dropbox" ]; then
+  DROPBOX_PATH="${HOME}/Library/CloudStorage/Dropbox"
+elif [ -d "${HOME}/Dropbox" ]; then
+  DROPBOX_PATH="${HOME}/Dropbox"
+else
+  DROPBOX_PATH=""
+fi
+
+if [ -n "${DROPBOX_PATH}" ]; then
+  mkdir -p "${DROPBOX_PATH}/Screenshots"
+  defaults write com.apple.screencapture location -string "${DROPBOX_PATH}/Screenshots"
+  echo "Dropbox found — screenshots will be saved to ${DROPBOX_PATH}/Screenshots"
 else
   defaults write com.apple.screencapture location -string "${HOME}/Desktop"
   echo "Dropbox not found — screenshots will be saved to ~/Desktop"
@@ -184,9 +193,9 @@ defaults write com.apple.finder QuitMenuItem -bool true
 defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Set Dropbox as the default location for new Finder windows (if available)
-if [ -d "${HOME}/Dropbox" ]; then
+if [ -n "${DROPBOX_PATH}" ]; then
   defaults write com.apple.finder NewWindowTarget -string "PfLo"
-  defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Dropbox/"
+  defaults write com.apple.finder NewWindowTargetPath -string "file://${DROPBOX_PATH}/"
 else
   defaults write com.apple.finder NewWindowTarget -string "PfHm"
   defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
