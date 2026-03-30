@@ -8,21 +8,22 @@ config_from_git:
     }
 
 homebrew_installed_packages:
-  - 1password-cli
+  - cloudflared
+  - cmake
   - gh
   - iperf
   - mas
-  - node
   - nmap
-  - npm
+  - node
+  - openjdk
   - openssl
   - python
   - python3
   - redis
-  - telnet
   - shellcheck
   - siege
   - sqlite
+  - telnet
   - tldr
   - wget
   - zookeeper
@@ -36,36 +37,50 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - 1password
+  - 1password-cli
   - adobe-creative-cloud
   - affinity-designer
+  - android-platform-tools
   - another-redis-desktop-manager
   - audio-hijack
+  - betterdisplay
   - bruno
   - chirp
+  - claude
   - cockatrice
   - colorsnapper
   - coolterm
+  - dbeaver-community
   - debookee
+  - devtoys
   - discord
   - drawio
   - dropbox
-  - raspberry-pi-imager
   - farrago
   - firefox
-  - firefox-developer-edition
+  - firefox@developer-edition
+  - freecad
+  - gitify
   - google-chrome
   - gpg-suite
+  - grammarly-desktop
   - grandperspective
+  - ilok-license-manager
   - imageoptim
   - iterm2
   - karabiner-elements
+  - kdrive
   - keka
   - licecap
-  - microsoft-excel
+  - loopback
+  - luniistore
   - microsoft-edge
+  - microsoft-excel
   - microsoft-powerpoint
   - microsoft-word
   - mqttfx
+  - native-access
   - ngrok
   - notion
   - notion-calendar
@@ -74,15 +89,18 @@ homebrew_cask_apps:
   - opera
   - orbstack
   - pocket-casts
-  - postbox
+  - postico
   - postman
   - prusaslicer
   - qflipper
+  - raspberry-pi-imager
   - raycast
   - rectangle
+  - rekordbox
   - saleae-logic
   - setapp
   - signal
+  - sketchup
   - slack
   - sourcetree
   - spotify
@@ -91,20 +109,33 @@ homebrew_cask_apps:
   - surfshark
   - tinymediamanager
   - via
+  - virtualbox
   - viscosity
   - visual-studio-code
   - vlc
+  - whatsapp
   - wireshark
+  - yousician
   - zoom
 
 mas_installed_apps:
-  - { id: 1352778147, name: 'Bitwarden (2024.2.0)' }
-  - { id: 1500180529, name: 'UPS Power Monitor (1.5.9)' }
-  - { id: 497799835, name: 'Xcode (15.3)' }
-  - { id: 669289700, name: 'Sweet Home 3D (7.3.1)' }
-  - { id: 937984704, name: 'Amphetamine (5.3.2)' }
-  - { id: 1088670425, name: 'Cuprum (3.1.9)' }
-  - { id: 442160987, name: 'Flycut (1.9.6)' }
+  - { id: 937984704, name: 'Amphetamine' }
+  - { id: 1352778147, name: 'Bitwarden' }
+  - { id: 6746516157, name: 'Compressor Creator Studio' }
+  - { id: 1088670425, name: 'Cuprum' }
+  - { id: 1631624924, name: 'Final Cut Pro Creator Studio' }
+  - { id: 442160987, name: 'Flycut' }
+  - { id: 1622596573, name: 'Infomaniak Mail' }
+  - { id: 361285480, name: 'Keynote Creator Studio' }
+  - { id: 1615087040, name: 'Logic Pro Creator Studio' }
+  - { id: 6746637089, name: 'MainStage Creator Studio' }
+  - { id: 6746637149, name: 'Motion Creator Studio' }
+  - { id: 361304891, name: 'Numbers Creator Studio' }
+  - { id: 361309726, name: 'Pages Creator Studio' }
+  - { id: 1453365242, name: 'P-touch Editor' }
+  - { id: 669289700, name: 'Sweet Home 3D' }
+  - { id: 1500180529, name: 'UPS Power Monitor' }
+  - { id: 497799835, name: 'Xcode' }
 
 # osx_script: "~/.osx --no-restart"
 
@@ -112,12 +143,6 @@ gem_packages: []
 
 npm_packages:
   - name: eslint
-    state: present
-  - name: semistandard
-    state: present
-  - name: snazzy
-    state: present
-  - name: nyc
     state: present
   - name: eslint-config-standard
     state: present
@@ -127,31 +152,46 @@ npm_packages:
     state: present
   - name: eslint-plugin-promise
     state: present
-
-pip_packages:
-  - name: platformio
+  - name: eslint-plugin-vue
+    state: present
+  - name: nyc
+    state: present
+  - name: semistandard
+    state: present
+  - name: snazzy
+    state: present
+  - name: vite
+    state: present
+  - name: wrangler
     state: present
 
+pip_packages: []
+
 vscode_packages:
-  - artdiniz.quitcontrol-vscode
+  - anthropic.claude-code
   - bmarkovic.haproxy
-  - spywhere.guides
-  - wholroyd.jinja
-  - wmaurer.change-case
-  - donjayamanne.githistory
-  - druideinformatique.antidote
-  - gruntfuggly.todo-tree
-  - lokalise.i18n-ally
-  - tyriar.sort-lines
+  - bruno-api-client.bruno
   - christian-kohler.npm-intellisense
   - christian-kohler.path-intellisense
-  - bruno-api-client.bruno
-  - dbaeumer.vscode-eslint
-  - platformio.platformio-ide
-  - digitalbrainstem.javascript-ejs-support
-  - ryanluker.vscode-coverage-gutters
-  - github.copilot-chat
-  - github.copilot
   - davidanson.vscode-markdownlint
+  - dbaeumer.vscode-eslint
+  - digitalbrainstem.javascript-ejs-support
+  - donjayamanne.githistory
+  - druideinformatique.antidote
+  - github.copilot-chat
+  - github.vscode-pull-request-github
+  - gruntfuggly.todo-tree
+  - hbenl.vscode-mocha-test-adapter
+  - hbenl.vscode-test-explorer
+  - lokalise.i18n-ally
+  - ms-vscode.cpptools
+  - platformio.platformio-ide
+  - ryanluker.vscode-coverage-gutters
+  - spywhere.guides
+  - supermaven.supermaven
+  - tyriar.sort-lines
+  - vue.volar
+  - wholroyd.jinja
+  - wmaurer.change-case
 
 post_provision_tasks: []
