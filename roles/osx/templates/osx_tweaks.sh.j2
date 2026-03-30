@@ -101,9 +101,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable "natural" (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -179,8 +176,7 @@ defaults write com.apple.screencapture show-thumbnail -bool false
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
-# Enable HiDPI display modes (requires restart)
-sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+# HiDPI is always enabled on Apple Silicon — no defaults write needed
 
 ###############################################################################
 # Finder                                                                      #
@@ -334,6 +330,7 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.dock show-recents -bool false
 
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
+# Note: may have no effect on macOS Sequoia — gesture handling was changed
 defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
 # Reset Launchpad, but keep the desktop wallpaper intact
@@ -399,6 +396,9 @@ defaults write com.apple.terminal StringEncodings -array 4
 ###############################################################################
 
 # Disable Siri completely
+# Note: SiriPrefStashedStatusMenuVisible, StatusMenuVisible, and NSStatusItem Visible Siri
+# may no longer fully suppress Siri in macOS Sequoia due to Apple Intelligence redesign.
+# Use System Settings → Siri & Spotlight to fully disable if needed.
 defaults write com.apple.assistant.support 'Assistant Enabled' -bool false
 defaults write com.apple.Siri SiriPrefStashedStatusMenuVisible -bool false
 defaults write com.apple.Siri StatusMenuVisible -bool false
@@ -422,9 +422,12 @@ defaults write com.apple.appleseed.FeedbackAssistant Autogather -bool false
 sudo pmset -a hibernatemode 0
 
 # Remove the sleep image to reclaim disk space (only safe after setting hibernatemode 0)
-sudo rm -f /private/var/vm/sleepimage
-sudo touch /private/var/vm/sleepimage
-sudo chflags uchg /private/var/vm/sleepimage
+# On Apple Silicon the sleepimage path may not exist — guard accordingly
+if [ -f /private/var/vm/sleepimage ]; then
+  sudo rm -f /private/var/vm/sleepimage
+  sudo touch /private/var/vm/sleepimage
+  sudo chflags uchg /private/var/vm/sleepimage
+fi
 
 # Disable the sudden motion sensor (no-op on Apple Silicon but harmless)
 sudo pmset -a sms 0
@@ -435,9 +438,6 @@ sudo systemsetup -setwakeonnetworkaccess off 2>/dev/null || true
 ###############################################################################
 # Developer ergonomics                                                        #
 ###############################################################################
-
-# Expand Git diffs in Quick Look
-defaults write com.apple.finder QLEnableXRayFolders -bool true
 
 # Note: to raise the open file descriptor limit for Node.js / Docker work,
 # add the following to your ~/.zshrc:
